@@ -37,7 +37,7 @@ export const createPost = async (req, res) => {
 
         res.status(201).json(newPostMessage );
     } catch (error) {
-        res.status(409).json({ message: error.message });
+        res.status(409).json({ message: "Строка не может быть пустой !!!" });
     }
 }
 
@@ -49,20 +49,29 @@ export const updatePost = async (req, res) => {
 
     const updatedPost = { creator, title, message, tags, selectedFile, _id: id };
 
-    await PostMessage.findByIdAndUpdate(id, updatedPost, { new: true });
-
-    res.json(updatedPost);
+    try {
+        await PostMessage.findByIdAndUpdate(id, updatedPost, { new: true });
+    
+        res.json(updatedPost);
+        
+    } catch (error) {
+        res.status(409).json({ message: "Произошла ошибка,повторите попытку позже" });
+    }
 }
 
-export const deletePost = async (req, res) => {
-    const { id } = req.params;
+ export const deletePost = async (req, res) => {
+        const { id } = req.params;
 
-    if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
+        if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
+    try {
+        
+        await PostMessage.findByIdAndRemove(id);
 
-    await PostMessage.findByIdAndRemove(id);
-
-    res.json({ message: "Post deleted successfully." });
-}
+        res.json({ message: "Post deleted successfully." });
+    } catch (error) {
+        res.status(409).json({ message: "Произошла ошибка,повторите попытку позже" });
+    }
+    }
 
 export const likePost = async (req, res) => {
     const { id } = req.params;
@@ -71,9 +80,14 @@ export const likePost = async (req, res) => {
     
     const post = await PostMessage.findById(id);
 
-    const updatedPost = await PostMessage.findByIdAndUpdate(id, { likeCount: post.likeCount + 1 }, { new: true });
-    
-    res.json(updatedPost);
+    try {
+        const updatedPost = await PostMessage.findByIdAndUpdate(id, { likesCount: post.likesCount + 1 }, { new: true });
+        
+        res.json(updatedPost);
+        
+    } catch (error) {
+        res.status(409).json({ message: "Произошла ошибка,повторите попытку позже" });
+    }
 }
 
 
