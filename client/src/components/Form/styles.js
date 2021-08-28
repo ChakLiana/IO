@@ -9,6 +9,7 @@ export default makeStyles((theme) => ({
   },
   paper: {
     padding: theme.spacing(2),
+    borderRadius: 30,
   },
   form: {
     display: 'flex',
@@ -21,5 +22,11 @@ export default makeStyles((theme) => ({
   },
   buttonSubmit: {
     marginBottom: 10,
+    borderRadius: 20,
   },
+  typography: {
+    fontFamily: [
+      '"Segoe UI Symbol"',
+    ].join(','),
+},
 }));
