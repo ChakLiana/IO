@@ -8,11 +8,9 @@ export default function Grids(){
     const [currentId, setCurrentId] = useState(0);
     const dispatch = useDispatch();
   
-  
     useEffect(() => {
       dispatch(getPosts());
     }, [currentId, dispatch]);
-  
     return(
         <Grow in>
         <Container>
