@@ -31,23 +31,27 @@ toolbar: {
     display: 'flex',
     justifyContent: 'space-between',
     width: '400px',
+    marginLeft:'16rem',
+    margin: theme.spacing(1),
 
   },
   userName: {
     display: 'flex',
     alignItems: 'center',
+    margin: theme.spacing(2),
   },
   brandContainer: {
     display: 'flex',
     alignItems: 'center',
-    marginLeft:'35rem'
+    margin: theme.spacing(1),
 
-
-
+    
   },
   purple: {
     color: theme.palette.getContrastText(deepPurple[500]),
     backgroundColor: deepPurple[500],
+    marginLeft:'30rem',
+    margin: theme.spacing(2),
 
 
 
