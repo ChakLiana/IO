@@ -5,9 +5,7 @@ import ClearIcon from '@material-ui/icons/Clear'
 import EditIcon from '@material-ui/icons/Edit';
 import moment from 'moment';
 import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
-
 import { useDispatch } from 'react-redux';
-
 import { likePost, deletePost } from '../../../Redux/actions/posts';
 import useStyles from './styles';
 
