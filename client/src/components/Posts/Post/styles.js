@@ -11,13 +11,13 @@ export default makeStyles({
     border: 'solid',
   },
   fullHeightCard: {
-    height: '90%',
+    height: '100%',
   },
   card: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
-    borderRadius: 30,
+    borderRadius: '15px',
     height: '100%',
     position: 'relative',
   },
@@ -25,13 +25,13 @@ export default makeStyles({
     position: 'absolute',
     top: '20px',
     left: '20px',
-    color:'white',
+    color: 'white',
   },
   overlay2: {
     position: 'absolute',
     top: '20px',
     right: '20px',
-    color: 'black',
+    color: 'white',
   },
   grid: {
     display: 'flex',
@@ -48,6 +48,9 @@ export default makeStyles({
     padding: '0 16px 8px 16px',
     display: 'flex',
     justifyContent: 'space-between',
-
+  },
+  cardAction: {
+    display: 'block',
+    textAlign: 'initial',
   },
 });
