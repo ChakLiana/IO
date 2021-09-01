@@ -5,7 +5,7 @@ export default makeStyles((theme) => ({
     borderRadius: 30,
     marginBottom: '1rem',
     display: 'flex',
-    padding: '16px',
+
     padding: theme.spacing(4),
   },
   pages: {
