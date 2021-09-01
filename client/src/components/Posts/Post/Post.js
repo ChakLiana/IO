@@ -48,7 +48,7 @@ const Post = ({ post, setCurrentId }) => {
       >
         <CardMedia className={classes.media} image={post.selectedFile || 'https://cdn2.vectorstock.com/i/thumb-large/55/86/anonymous-icon-incognito-sign-privacy-vector-34705586.jpg'} title={post.title} />
         <div className={classes.overlay}>
-          <Typography variant="h6">{post.name}</Typography>
+
           <Typography variant="body2"> Time: {moment(post.createdAt).fromNow()}</Typography>
         </div>
         {(user?.result?.googleId === post?.creator || user?.result?._id === post?.creator) && (
