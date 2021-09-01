@@ -13,10 +13,7 @@ const postSchema = mongoose.Schema({
         type:String,
         required: true,
     },
-    tags: {
-        type:[String],
-        required: true,
-    },
+
     selectedFile: String,
     likeCount: {
         type: Number,
